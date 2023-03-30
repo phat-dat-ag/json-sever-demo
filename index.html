@@ -10,10 +10,15 @@
       href="https://fullstack.edu.vn/favicon/favicon_16x16.png"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <link
       rel="stylesheet"
-      href="assets/font/themify-icons-font/themify-icons/themify-icons.css"
+      href="./assets/font/themify-icons-font/themify-icons/themify-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/css/responsive.css
+    "
     />
   </head>
 
@@ -27,14 +32,14 @@
           <li><a href="#tour">Tour</a></li>
           <li><a href="#contact">Contact</a></li>
           <li>
-            <a href="">
+            <a href="#">
               More
               <i class="nav-arrow-down ti-angle-down"></i>
             </a>
             <ul class="subnav">
-              <li><a href="">Merchandise</a></li>
-              <li><a href="">Extras</a></li>
-              <li><a href="">Media</a></li>
+              <li><a href="#">Merchandise</a></li>
+              <li><a href="#">Extras</a></li>
+              <li><a href="#">Media</a></li>
             </ul>
           </li>
         </ul>
@@ -44,6 +49,9 @@
           <i class="search-icon ti-search"></i>
         </div>
         <!-- End search -->
+        <div id="mobile-menu" class="mobile-menu-btn">
+          <i class="menu-icon ti-menu"></i>
+        </div>
       </div>
       <div id="slider">
         <div class="text-content">
@@ -239,6 +247,7 @@
         <p class="copyright">Powered by <a href="">w3.css</a></p>
       </div>
     </div>
+    <!-- Modal -->
     <div class="modal js-modal">
       <div class="modal-container">
         <div class="modal-close js-modal-close">
@@ -276,6 +285,32 @@
         </footer>
       </div>
     </div>
+    <script>
+      var header = document.getElementById("header");
+      var mobileMenu = document.getElementById("mobile-menu");
+      var headerHeight = header.clientHeight;
+
+      // Đóng mở mobile menu
+      mobileMenu.onclick = function () {
+        var isClose = header.clientHeight === headerHeight;
+        if (isClose) {
+          header.style.height = "auto";
+        } else {
+          header.style.height = null;
+        }
+      };
+
+      // Tự động đóng khi chọn menu
+      var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+      for (var i = 0; i < menuItems.length; i++) {
+        var menuItem = menuItems[i];
+
+        menuItem.conclick = function () {
+          header.style.height = null;
+        };
+      }
+    </script>
+    <!-- JS Modal -->
     <script>
       const buyBtns = document.querySelectorAll(".js-buy-tickets");
       const modal = document.querySelector(".js-modal");

@@ -82,6 +82,7 @@ có thuộc tính clear: both,
   background-color: #000;
   /* Để khi lăn lên ảnh không đè header */
   z-index: 1;
+  overflow: hidden;
 }
 #nav {
   display: inline-block;
@@ -133,18 +134,27 @@ có thuộc tính clear: both,
   color: #fff;
   line-height: 46px;
 }
+#header .mobile-menu-btn,
 #header .search-btn {
   padding: 0 21px;
   float: right;
   cursor: pointer;
 }
-.search-btn .ti-search {
+#header .menu-icon,
+#header .search-icon {
   color: #fff;
   line-height: 46px;
   font-size: 20px;
 }
+
 #header .search-btn:hover {
   background-color: #f44336;
+}
+#header .mobile-menu-btn:hover {
+  background-color: #ccc;
+}
+#header .mobile-menu-btn:hover .menu-icon {
+  color: #000;
 }
 #slider {
   position: relative;
@@ -175,6 +185,9 @@ có thuộc tính clear: both,
   margin-right: auto;
   padding: 64px 0 112px;
   width: 800px;
+  max-width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 .content-section .section-heading {
   margin: 10px 0;
@@ -337,8 +350,8 @@ có thuộc tính clear: both,
 #footer .copyright a {
   color: rgba(0, 0, 0, 0.6);
 }
+/* Modal */
 .modal {
-  /* none or flex */
   display: none;
   align-items: center;
   justify-content: center;
@@ -349,6 +362,7 @@ có thuộc tính clear: both,
   left: 0;
   background-color: rgba(0, 0, 0, 0.4);
 }
+/* Mang cả 2 class */
 .modal.open {
   display: flex;
 }
