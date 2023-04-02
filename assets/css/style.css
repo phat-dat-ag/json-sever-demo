@@ -168,8 +168,7 @@ có thuộc tính clear: both,
   position: relative;
   margin-top: 46px;
   padding-top: 50%;
-  background: url(/w3_school/assets/img/slider/slider1.jpg) top center/ cover
-    no-repeat;
+  background: url(../img/slider/slider1.jpg) top center/ cover no-repeat;
 }
 #slider .text-content {
   position: absolute;
@@ -185,6 +184,8 @@ có thuộc tính clear: both,
 }
 #slider .text-discription {
   font-size: 15px;
+  margin-top: 25px;
+  text-shadow: 0 0 1px #000;
 }
 #content {
 }
